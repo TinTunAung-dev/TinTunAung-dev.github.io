@@ -1,0 +1,42 @@
+Exercise 1: What’s the output in the console?
+function b() {
+    const y = 30;
+    a();
+    function a() {
+        console.log(x, y);
+    }
+    var x = 10;
+    console.log(x, y);
+}
+const x = 20;
+var y = 40;
+b();
+
+Ans: The output for function a() is 'x is undefined and y is 30'. Because x is declared using var which is function scoped and hoisted to the global and it is assigned a value after the function a() is called. At that time, x is still in TDZ and the value 'undefined'.
+The output for function b() is 'x is 10 and y is 30'.
+
+
+------------------------------------------------------------------
+
+
+Exercise 2: What’s the output in the console?
+function foo(x) {
+    let m;
+    console.log(x, y);
+    if (x > 5) {
+        var y = 5;
+        m = x + y;
+    } else {
+        let z = 10;
+        m = z;
+    }
+    x = m;
+    console.log(x, y);
+}
+var x = 10;
+foo(3);
+console.log(x);
+
+Ans: The output of the first console.log is 'x is 3 and y is undefined'. 
+The output of the second console.log is 'x is 10 and y is still undefined' because of if statement is not called.
+The output of the third console.log is 'x is 10'.

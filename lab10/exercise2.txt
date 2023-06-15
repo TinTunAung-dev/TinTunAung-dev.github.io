@@ -3,8 +3,8 @@ setImmediate runs in check phase and setTimeout runs in Timer phase. If we have 
 
 
 2. Explain the difference between process.nextTick and setImmediate?
-Callback of process.nextTick get executed multiple chances in one iteration while setImmediate only get executed once in one cycle.
-process.nextTick is API provided natively by Node.js while setImmediate - provided by libuv.
+Callback of process.nextTick get executed multiple chances in one iteration and setImmediate only get executed once in one cycle.
+process.nextTick is API provided natively by Node.js and setImmediate - provided by libuv.
 
 3. Does Node.js has window object?
 No.
